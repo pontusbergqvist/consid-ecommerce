@@ -1,5 +1,6 @@
 import request from "../../utils/request";
 import { gql } from "graphql-request";
+import { Image } from "react-datocms";
 
 export const getStaticProps = async () => {
   const query = gql`
@@ -9,8 +10,18 @@ export const getStaticProps = async () => {
         name
         price
         mainImage {
-          url
-          alt
+          responsiveImage {
+            srcSet
+            webpSrcSet
+            sizes
+            src
+            width
+            height
+            aspectRatio
+            alt
+            title
+            base64
+          }
         }
       }
     }
@@ -26,11 +37,7 @@ const Produkter = ({ data }) => {
     <section className="w-full grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-16 mx-auto">
       {data.allProducts.map((product) => (
         <div key={product.id} className=" cursor-pointer rounded">
-          <img
-            src={product.mainImage.url}
-            alt={product.mainImage.alt ? product.mainImage.alt : product.name}
-            className="aspect-square object-cover rounded-t"
-          />
+          <Image data={product.mainImage.responsiveImage} />
           <div className="py-1">
             <p className="text-[25px]">{product.name}</p>
             <div className="flex justify-between items-center">
