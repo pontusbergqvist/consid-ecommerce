@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         f3: "#f3f3f3",
       },
+      screens: {
+        tablet: "640px",
+      },
     },
   },
   plugins: [],

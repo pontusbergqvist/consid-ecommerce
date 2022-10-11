@@ -26,7 +26,6 @@ export const getStaticProps = async () => {
 };
 
 const Contact = ({ data }) => {
-  console.log(data);
   return (
     <>
       <img
