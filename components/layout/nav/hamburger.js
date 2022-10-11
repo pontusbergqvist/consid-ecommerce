@@ -29,7 +29,7 @@ const Hamburger = () => {
         <div className="bg-black h-[2px] w-full"></div>
       </div>
       {active ? (
-        <ul className="absolute right-0 my-4 text-right bg-slate-300 pl-16 py-1 pr-1 rounded">
+        <ul className="absolute right-0 my-4 text-right bg-slate-300 pl-16 py-1 pr-1 rounded z-10">
           <Link href="/">
             <li className="cursor-pointer p-2">Hem</li>
           </Link>

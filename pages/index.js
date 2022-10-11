@@ -6,6 +6,7 @@ export const getStaticProps = async () => {
   const query = gql`
     query {
       startpage {
+        title
         mainImage {
           id
           responsiveImage {
