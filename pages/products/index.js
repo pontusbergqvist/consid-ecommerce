@@ -10,7 +10,7 @@ export const getStaticProps = async () => {
         name
         price
         mainImage {
-          responsiveImage {
+          responsiveImage(imgixParams: { fit: clamp, auto: format }) {
             srcSet
             webpSrcSet
             sizes
@@ -36,8 +36,10 @@ const Produkter = ({ data }) => {
   return (
     <section className="w-full grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-16 mx-auto">
       {data.allProducts.map((product) => (
-        <div key={product.id} className=" cursor-pointer rounded">
-          <Image data={product.mainImage.responsiveImage} />
+        <div key={product.id} className="cursor-pointer rounded flex flex-col justify-between">
+          <div className="bg-red-400 h-full">
+            <Image data={product.mainImage.responsiveImage} />
+          </div>
           <div className="py-1">
             <p className="text-[25px]">{product.name}</p>
             <div className="flex justify-between items-center">
