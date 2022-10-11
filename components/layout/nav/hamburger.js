@@ -11,7 +11,7 @@ const Hamburger = () => {
   }, [router.route]);
 
   return (
-    <div className="absolute tablet:hidden block right-0">
+    <div className="tablet:hidden block">
       <div
         className="cursor-pointer h-[25px] w-[35px] flex flex-col justify-between"
         style={

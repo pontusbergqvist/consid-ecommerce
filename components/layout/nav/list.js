@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 const List = () => {
   const router = useRouter();
   return (
-    <ul className="hidden items-center tablet:flex">
+    <ul className="hidden items-center tablet:flex text-[20px]">
       <Link href="/">
         <li
           className="mx-2 cursor-pointer"
@@ -21,7 +21,7 @@ const List = () => {
         <li
           className="mx-2 cursor-pointer"
           style={
-            router.route === "/products"
+            router.route.includes("/products")
               ? { borderBottom: "2px solid #222" }
               : { borderBottom: "2px solid white" }
           }

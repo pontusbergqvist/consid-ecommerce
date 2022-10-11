@@ -6,8 +6,12 @@ const Nav = () => {
   return (
     <nav className="flex justify-between py-5 relative max-w-[1200px] mx-auto">
       <List />
-      <Hamburger />
-      <Cart items={3} />
+      <div className="flex items-center justify-between absolute right-0">
+        <Cart items={3} />
+        <div className="ml-5 block tablet:hidden">
+          <Hamburger />
+        </div>
+      </div>
     </nav>
   );
 };
