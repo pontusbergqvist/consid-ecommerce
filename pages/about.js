@@ -5,11 +5,10 @@ import { StructuredText } from "react-datocms";
 export const getStaticProps = async () => {
   const query = gql`
     query {
-      startpage {
+      allPages(filter: { id: { eq: "24919296" } }) {
         title
         mainImage {
           url
-          alt
         }
         content {
           value
@@ -17,19 +16,20 @@ export const getStaticProps = async () => {
       }
     }
   `;
-  const res = await request({ query });
-  const data = res.startpage;
 
+  const res = await request({ query });
+  const data = res.allPages[0];
   return {
     props: { data },
   };
 };
-const Home = ({ data }) => {
+
+const About = ({ data }) => {
   return (
     <>
       <img
         src={data.mainImage.url}
-        alt={data.mainImage.alt ? data.mainImage.alt : "Homepage header"}
+        alt="About page header image"
         className="mx-auto"
       />
       <h2 className="my-4 text-[30px]">{data.title}</h2>
@@ -40,4 +40,4 @@ const Home = ({ data }) => {
   );
 };
 
-export default Home;
+export default About;
