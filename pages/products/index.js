@@ -33,11 +33,11 @@ export const getStaticProps = async () => {
   };
 };
 
-const Produkter = ({ data }) => {
+const Products = ({ data }) => {
   return (
     <section className="w-full grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-16 mx-auto">
       {data.allProducts.map((product) => (
-        <Link href={`products/${product.id}`}>
+        <Link href={`products/${product.id}`} key={product.id}>
           <div
             key={product.id}
             className="cursor-pointer rounded flex flex-col justify-between"
@@ -58,4 +58,4 @@ const Produkter = ({ data }) => {
   );
 };
 
-export default Produkter;
+export default Products;

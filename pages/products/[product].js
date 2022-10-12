@@ -2,6 +2,8 @@ import { Image, StructuredText } from "react-datocms";
 import { gql } from "graphql-request";
 import request from "../../utils/request";
 import responsiveImage from "../../utils/responsiveImage";
+import { useContext } from "react";
+import { ShopContext } from "../../components/context";
 
 export const getStaticPaths = async () => {
   const query = gql`
@@ -29,6 +31,7 @@ export const getStaticProps = async ({ params }) => {
   const query = gql`
   query {
     allProducts(filter: {id: {eq: ${params.product}}}) {
+      id
       name
       price
       mainImage {
@@ -55,6 +58,8 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Product = ({ product }) => {
+  const context = useContext(ShopContext);
+  console.log(context);
   return (
     <div className="flex laptop:flex-row flex-col">
       <div className="laptop:w-1/2 w-full grid grid-cols-2">
@@ -70,7 +75,15 @@ const Product = ({ product }) => {
         <div>
           <h2 className="text-[30px]">{product.name}</h2>
           <h3 className="text-[25px]">{`${product.price}:-`}</h3>
-          <button className="bg-blue-500 text-white p-1 px-2 rounded">
+          <button
+            className="bg-blue-500 text-white p-1 px-2 rounded"
+            onClick={() =>
+              context.addToCart({
+                id: product.id,
+                quantity: 1,
+              })
+            }
+          >
             Add to cart
           </button>
         </div>
