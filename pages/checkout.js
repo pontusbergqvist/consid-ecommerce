@@ -22,14 +22,14 @@ const Checkout = () => {
                   <div className="flex flex-col items-center text-[20px]">
                     <div
                       className="text-[16px] cursor-pointer"
-                      onClick={() => context.decrementQuantity(product)}
+                      onClick={() => context.incrementQuantity(product)}
                     >
                       <AiOutlineArrowUp />
                     </div>
                     {product.quantity}
                     <div
                       className="text-[16px] cursor-pointer"
-                      onClick={() => context.incrementQuantity(product)}
+                      onClick={() => context.decrementQuantity(product)}
                     >
                       <AiOutlineArrowDown />
                     </div>
