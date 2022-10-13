@@ -4,7 +4,7 @@
 - Sidor och undersidor med data från DatoCMS - 3h
 - Implementering av kundkorg med useContext/useReducer för state - 4h
 
-Totalt: 7h
+Totalt: 8h
 
 ## Kommentarer
 
