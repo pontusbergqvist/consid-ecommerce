@@ -40,11 +40,12 @@ const Products = ({ data }) => {
         <Link href={`products/${product.id}`} key={product.id}>
           <div
             key={product.id}
-            className="cursor-pointer rounded flex flex-col justify-between"
+            className="cursor-pointer rounded flex flex-col justify-between bg-f3 p-2"
           >
-            <div className="bg-red-400 h-full">
-              <Image data={product.mainImage.responsiveImage} />
-            </div>
+            <Image
+              data={product.mainImage.responsiveImage}
+              className="h-full"
+            />
             <div className="py-1">
               <p className="text-[25px]">{product.name}</p>
               <div className="flex justify-between items-center">
