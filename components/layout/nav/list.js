@@ -14,7 +14,7 @@ const List = () => {
               : { borderBottom: "2px solid white" }
           }
         >
-          Hem
+          Home
         </li>
       </Link>
       <Link href="/products">

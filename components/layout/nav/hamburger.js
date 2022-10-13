@@ -31,7 +31,7 @@ const Hamburger = () => {
       {active ? (
         <ul className="absolute right-0 my-4 text-right bg-slate-300 pl-16 py-1 pr-1 rounded z-10">
           <Link href="/">
-            <li className="cursor-pointer p-2">Hem</li>
+            <li className="cursor-pointer p-2">Home</li>
           </Link>
           <Link href="/products">
             <li className="cursor-pointer p-2">Products</li>
