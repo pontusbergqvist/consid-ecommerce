@@ -59,7 +59,6 @@ export const getStaticProps = async ({ params }) => {
 
 const Product = ({ product }) => {
   const context = useContext(ShopContext);
-  console.log(context);
   return (
     <div className="flex laptop:flex-row flex-col">
       <div className="laptop:w-1/2 w-full grid grid-cols-2">
@@ -81,6 +80,9 @@ const Product = ({ product }) => {
               context.addToCart({
                 id: product.id,
                 quantity: 1,
+                name: product.name,
+                price: product.price,
+                mainImage: product.mainImage,
               })
             }
           >

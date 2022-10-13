@@ -1,15 +1,26 @@
-import addOrUpdate from "../utils/reducer/addCart";
+import { addOrUpdate, remove, decrement, increment } from "../utils/cart";
 
 export const initialState = {
-  total: 0,
   products: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  decrementQuantity: () => {},
+  incrementQuantity: () => {},
+  reset: () => {},
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    // ADD_CART: Checks if object with product id exists in products array, if it exists - update quantity for existing product object - else create new product object
     case "ADD_CART":
       return addOrUpdate(state, action);
+    case "REMOVE_CART":
+      return remove(state, action);
+    case "DECREMENT":
+      return decrement(state, action);
+    case "INCREMENT":
+      return increment(state, action);
+    case "RESET":
+      return initialState;
     default:
       throw new Error("Wrong action type");
   }

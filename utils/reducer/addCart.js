@@ -11,12 +11,14 @@ const addOrUpdate = (state, action) => {
           return {
             id: product.id,
             quantity: product.quantity + action.payload.quantity,
+            name: action.payload.name,
+            price: action.payload.price,
+            mainImage: action.payload.mainImage,
           };
         } else {
           return product;
         }
       }),
-      total: state.total + action.payload.quantity,
     };
   } else {
     return {
@@ -26,9 +28,11 @@ const addOrUpdate = (state, action) => {
         {
           id: action.payload.id,
           quantity: action.payload.quantity,
+          name: action.payload.name,
+          price: action.payload.price,
+          mainImage: action.payload.mainImage,
         },
       ],
-      total: state.total + action.payload.quantity,
     };
   }
 };
