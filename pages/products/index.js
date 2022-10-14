@@ -1,4 +1,5 @@
-import request from "../../utils/request";
+import responsiveImage from "../../lib/datoCMS/responsiveImage";
+import request from "../../lib/datoCMS/request";
 import { gql } from "graphql-request";
 import { Image } from "react-datocms";
 import Link from "next/link";
@@ -12,16 +13,7 @@ export const getStaticProps = async () => {
         price
         mainImage {
           responsiveImage(imgixParams: { fit: clamp, auto: format }) {
-            srcSet
-            webpSrcSet
-            sizes
-            src
-            width
-            height
-            aspectRatio
-            alt
-            title
-            base64
+            ${responsiveImage}
           }
         }
       }

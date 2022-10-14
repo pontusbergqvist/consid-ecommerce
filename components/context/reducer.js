@@ -1,4 +1,7 @@
-import { addOrUpdate, remove, decrement, increment } from "../utils/cart";
+import addOrUpdate from "../../lib/reducer-methods/addOrUpdate";
+import remove from "../../lib/reducer-methods/remove";
+import increment from "../../lib/reducer-methods/increment";
+import decrement from "../../lib/reducer-methods/decrement";
 
 export const initialState = {
   products: [],

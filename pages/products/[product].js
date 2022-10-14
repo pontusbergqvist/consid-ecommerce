@@ -1,7 +1,7 @@
 import { Image, StructuredText } from "react-datocms";
 import { gql } from "graphql-request";
-import request from "../../utils/request";
-import responsiveImage from "../../utils/responsiveImage";
+import request from "../../lib/datoCMS/request";
+import responsiveImage from "../../lib/datoCMS/responsiveImage";
 import { useContext } from "react";
 import { ShopContext } from "../../components/context";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -103,7 +103,6 @@ const Product = ({ product }) => {
           </button>
         </div>
       </div>
-
     </div>
   );
 };

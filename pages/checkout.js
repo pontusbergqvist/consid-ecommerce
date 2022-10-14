@@ -3,7 +3,7 @@ import { ShopContext } from "../components/context";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { Image } from "react-datocms";
-import OrderConfirmation from "../components/checkout/orderConfirmation";
+import OrderConfirmation from "../components/orderConfirmation";
 
 const Checkout = () => {
   const [orderIsSent, setOrderIsSent] = useState(false);

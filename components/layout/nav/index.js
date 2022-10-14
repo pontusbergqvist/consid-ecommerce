@@ -1,6 +1,6 @@
 import List from "./list";
 import Hamburger from "./hamburger";
-import Cart from "../../cart";
+import Cart from "./cart";
 
 const Nav = () => {
   return (

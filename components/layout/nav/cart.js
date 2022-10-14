@@ -1,4 +1,4 @@
-import { ShopContext } from "../context";
+import { ShopContext } from "../../context";
 import { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";

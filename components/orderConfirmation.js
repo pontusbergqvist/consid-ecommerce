@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { FcOk } from "react-icons/fc";
-import { ShopContext } from "../context";
+import { ShopContext } from "./context";
 import Link from "next/link";
 
 const OrderConfirmation = () => {
@@ -17,7 +17,9 @@ const OrderConfirmation = () => {
       </div>
       <p className="my-3">Your order is complete!</p>
       <Link href="/">
-        <button className="text-[16px] bg-blue-500 text-white p-2 rounded">Return to home</button>
+        <button className="text-[16px] bg-blue-500 text-white p-2 rounded">
+          Return to home
+        </button>
       </Link>
     </div>
   );
